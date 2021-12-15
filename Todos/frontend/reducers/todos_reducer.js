@@ -16,7 +16,6 @@ const initialState = {
   };
   
 const todosReducer = (state = initialState, action) => {
-
     Object.freeze(state);
     const nextState = Object.assign({}, state);
 

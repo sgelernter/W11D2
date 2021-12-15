@@ -10,14 +10,8 @@ const mSTP = (store) => {
     };
 };
 
-const mDTP = (dispatch) => {
-    return {
-        receiveTodo: (todo) => {
-            dispatch(receiveTodo(todo))
-        }
-    };
-}
+const mDTP = dispatch => ({
+    receiveTodo: () => dispatch(receiveTodo())
+})
 
-const ToDoContainer =  connect(mSTP, mDTP)(ToDoList);
-
-export default ToDoContainer;
+export default connect(mSTP, mDTP)(ToDoList);
