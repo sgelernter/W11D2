@@ -30,7 +30,8 @@ class ToDoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.receiveTodo(this.state);
+        const todo = Object.assign({}, this.state);
+        this.props.receiveTodo(todo);
         this.setState(initialState);
     }
 

@@ -3,6 +3,7 @@ import TodoListItem from "./todo";
 import ToDoForm from "./todo_form";
 
 const ToDoList = (props) => {
+
     return (
         <div>
             <h2>To-Do List:</h2>
@@ -10,7 +11,7 @@ const ToDoList = (props) => {
                 {props.todos.map((todo) => <TodoListItem key={todo.id} todo={todo}/>)}
             </ul>
             <br/>
-            <ToDoForm receiveTodo={receiveTodo}/>
+            <ToDoForm receiveTodo={props.receiveTodo}/>
         </div>
     )
 }
