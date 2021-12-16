@@ -1,6 +1,8 @@
+import * as TodoApiUtil from "../util/todo_api_util";
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
 export const DELETE_TODO = "DELETE_TODO";
+
 
 export const receiveTodos = (todos) => {
     return {
@@ -22,5 +24,11 @@ export const deleteTodo = (todo) => {
         todo: todo
     }
 }
+
+export const fetchTodos = () => {
+    return (dispatch) => {
+        return TodoApiUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)));
+    }
+}   
 
 
